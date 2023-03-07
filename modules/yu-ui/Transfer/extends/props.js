@@ -7,4 +7,8 @@ export default {
     type: String,
     default: "已选择",
   },
+  modelValue: {
+    type: Array,
+    default: () => [],
+  }
 };

@@ -1,4 +1,6 @@
 <script setup>
+  import { ref } from 'vue';
+  const value = ref([])
   const data = [
     {
       title: '华为',
@@ -45,7 +47,9 @@
 
 <template>
   <div>
+    {{ value }}
     <transfer 
+    v-model = "value"
     :data="data"
     right-title="已选择"
     ></transfer>
