@@ -3,17 +3,15 @@ import Magnifier from "./components/Magnifier/index.js";
 
 const components = {
   Transfer,
-  Magnifier
+  Magnifier,
 };
 
 const install = function (Vue) {
   for (const comp in components) {
     Vue.component(comp, components[comp]);
   }
-}
+};
 
 export default {
   install,
-  Transfer,
-  Magnifier
 };

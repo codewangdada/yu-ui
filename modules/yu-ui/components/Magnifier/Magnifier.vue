@@ -33,9 +33,9 @@
 </template>
 
 <script setup>
-import { magnifier } from '../../directives';
+import { magnifier } from "../../directives";
 
-const vMagnifier = magnifier
+const vMagnifier = magnifier;
 const props = defineProps({
   imgWidth: {
     type: Number,
@@ -85,14 +85,14 @@ const props = defineProps({
     overflow: hidden;
 
     &.show {
-        display: block;
-        transform: scale(1.5);
+      display: block;
+      transform: scale(1.5);
     }
 
     .mag-img {
-        position: absolute;
-        top: 0;
-        left: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
   }
 }

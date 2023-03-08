@@ -1,6 +1,6 @@
 <script setup>
-import B from './components/B'
-import A from './components/A';
+import B from "./components/B";
+import A from "./components/A";
 </script>
 
 <template>

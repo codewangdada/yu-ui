@@ -51,7 +51,7 @@ export function useCheckedData() {
   }
 
   function addAllCheckData(leftOrRight, data) {
-    const finalData = data.filter(item => !item.disabled)
+    const finalData = data.filter((item) => !item.disabled);
     switch (leftOrRight) {
       case "left":
         checkedData.left = finalData;
@@ -90,7 +90,13 @@ export function useCheckedData() {
     }
   }
 
-  return [checkedData, addCheckedData, removeCheckedData, addAllCheckData, removeAllCheckedData];
+  return [
+    checkedData,
+    addCheckedData,
+    removeCheckedData,
+    addAllCheckData,
+    removeAllCheckedData,
+  ];
 }
 
 export function useDragedItem() {
@@ -119,20 +125,28 @@ export function useComputedData(data, targetIndex, rightListData, checkedData) {
   }));
 
   const checkedAll = computed(() => ({
-    left: leftListData.value.filter(item => !item.disabled).length === checkedData.left.length && checkedData.left.length,
-    right: rightListData.value.length === checkedData.right.length && checkedData.right.length
-  }))
+    left:
+      leftListData.value.filter((item) => !item.disabled).length ===
+        checkedData.left.length && checkedData.left.length,
+    right:
+      rightListData.value.length === checkedData.right.length &&
+      checkedData.right.length,
+  }));
 
   const indeterminate = computed(() => ({
-    left: (leftListData.value.filter(item => !item.disabled).length !== checkedData.left.length) && checkedData.left.length,
-    right: rightListData.value.length !== checkedData.right.length && checkedData.right.length
-  })) 
+    left:
+      leftListData.value.filter((item) => !item.disabled).length !==
+        checkedData.left.length && checkedData.left.length,
+    right:
+      rightListData.value.length !== checkedData.right.length &&
+      checkedData.right.length,
+  }));
 
   return {
     leftTitle,
     leftListData,
     transferButtonDisabled,
     checkedAll,
-    indeterminate
+    indeterminate,
   };
 }

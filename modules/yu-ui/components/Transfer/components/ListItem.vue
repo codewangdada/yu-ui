@@ -10,7 +10,7 @@
       type="checkbox"
       :disabled="item.disabled"
       :id="'__check__' + item.id"
-      :checked="checkData.map(item => item.id).includes(item.id)"
+      :checked="checkData.map((item) => item.id).includes(item.id)"
       @click="checkboxClick($event.target.checked, leftOrRight, item)"
     />
     <label :for="'__check__' + item.id">{{ item.phone_name }}</label>
